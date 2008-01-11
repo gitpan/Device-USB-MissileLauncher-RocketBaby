@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use Device::USB;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 sub new
 {
@@ -116,7 +116,7 @@ returns whether the command is executable.
 
 =head1 NOTE
 
-cando("fire") returns false only moment of launching.
+cando("fire") returns false at only moment of launching.
 You can launch rockets one by one like this:
 
   use Time::Hires qw( sleep );
@@ -132,18 +132,18 @@ You can launch rockets one by one like this:
               while ($ml->cando("fire")) {
                   sleep 0.15;
               }
-              usleep 0.5;
+              sleep 0.5;
               alarm 0;
           }
           $ml->do("stop");
       }
   }
 
-You might have to adjust figures.
+You might have to adjust sleep figures.
 
 =head1 SEE ALSO
 
-USB::Device::MissileLauncher
+Device::USB::MissileLauncher
 
 http://www.dreamcheeky.com/product/missile-launcher.php
 
